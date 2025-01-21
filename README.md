@@ -62,7 +62,7 @@ $$
 Find by hand the corresponding right-hand-side $f(x, y)$ for this solution. Is the exact solution consistent with the boundary conditions ?
 Given a number of grid points (start with a small number), call a linear system solver and compute the relative error in the maximum norm in the computational domain $\Omega$. Show a convergence plot in $\log -\log$ scale with respect to the step size. What is the expected convergence rate? Do you observe any difficulty in terms of computational time ?
 
-2 Solving the linear system
+## 2 Solving the linear system
 In this part we will analyze various ways to solve the linear system. We will compare the numerical cost of some direct and iterative methods.
 2.1 Direct methods
 
@@ -76,20 +76,28 @@ $$
 where $\otimes$ is the Kronecker product, and $T$ a matrix to be identified.
 - Explain why it is advantageous to use a sparse matrix representation. As a justification, you may count the number of operations when doing a Gaussian elimination of a tridiagonal matrix.
 
-- 2.2 Iterative methods
+## - 2.2 Iterative methods
 
 We shall now investigate the performance of some iterative methods. Before doing so you may find theoretically the eigenvalues of the discrete Laplacian in 2D by following these steps
-- If $\mathbb{T}$ is of size $N$, show that its eigenvalues are $\lambda_i=2-2 \cos \left(\frac{\pi i}{N+1}\right)$. (Hint: find a recurrence formula for the eigenvalues and look again at the definition of Chebychev polynomials)
-- Use the Kronecker product form of $\Delta_h$ to deduce the eigenvalues $\lambda_{i, j}$ of the 2D discrete Laplacian (Hint: look up on what does the Kronecker product to eigenvalues)
+
+> - If $\mathbb{T}$ is of size $N$, show that its eigenvalues are $\lambda_i=2-2 \cos \left(\frac{\pi i}{N+1}\right)$. (Hint: find a recurrence formula for the eigenvalues and look again at the definition of Chebychev polynomials)
+
+> - Use the Kronecker product form of $\Delta_h$ to deduce the eigenvalues $\lambda_{i, j}$ of the 2D discrete Laplacian (Hint: look up on what does the Kronecker product to eigenvalues)
 We now turn into the implementation of iterative methods.
+
 1. Implement the Jacobi and Gauss-Seidel methods, and validate their implementation thanks to a small test that you will choose.
+
 2. Do you expect these methods to converge for the discrete Poisson problem? Explain your answer by giving linear algebra arguments and by writing down the convergence radius. How will the convergence be affected when increasing the number of grid points ?
+
 3. Explain how to measure the cost of an iterative solver (number of iterations and cost per iteration).
+
 4. Implement the SOR method. Plot the number of iterations to reach a given residual (that you fix) as a function of the relaxation parameter $\omega$. Is there an optimal parameter? If yes, can you predict this value theoretically ?
+
 5. Plot the decrease of the residual for different methods (Jacobi, Gauss-Seidel, SOR) and conclude on the computational performance of these iterative methods.
 
-3 Extensions to the solver
+## 3 Extensions to the solver
 You can continue the development of your solver by choosing one of the following extensions
+
 1. Add a diffusion term to your solver such that the equation becomes
 
 $$
@@ -97,6 +105,9 @@ $$
 $$
 
 where $\alpha$ is a real parameter. Solve again your problem with direct and iterative methods. What is going on for iterative methods when $\alpha<0$ ? Explain the behaviour by an analysis of the eigenvalues.
+
 2. Implement a higher order finite difference formula.
+
 3. Implement the conjugate gradient iterative method, and compare its efficiency with the other iterative methods.
+
 4. Implement non-homogeneous Dirichlet boundary conditions and/or Neumann boundary conditions thanks to the 2nd order centered difference scheme. Validate your solver by checking the convergence rate thanks to an exact solution that you will define.
