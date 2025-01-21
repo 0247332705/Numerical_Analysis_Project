@@ -34,7 +34,7 @@ You may follow the steps below
 4. Write the discrete Laplacian in a matrix form, and express the discrete Poisson equation as a linear system $\mathrm{Au}=\mathbf{f}$ of size $(N_x-1\ ) \times (N_y-1\ )$. To do so you need to order the unknowns to get a global unknown vector. For example, you can use the column ordering $\mathbf{u}=\mathbf{u}_j, j= \{1, N_y-1\ \}$, where each $\mathbf{u}_j$ is a vector of size $N_x-1$ such that
 
 $$
-\mathbf{u}_j= (u_{0,j}, u_{1,j},\cdots,u_{N_x-1,j})^T
+u_j= (u_{0,j}, u_{1,j},\cdots,u_{N_x-1,j})^T
 $$
 
 
