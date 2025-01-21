@@ -95,8 +95,8 @@ We now turn into the implementation of iterative methods.
 
 5. Plot the decrease of the residual for different methods (Jacobi, Gauss-Seidel, SOR) and conclude on the computational performance of these iterative methods.
 
+##3 Extensions to the solver
 
-## 3 Extensions to the solver
 You can continue the development of your solver by choosing one of the following extensions
 
 1. Add a diffusion term to your solver such that the equation becomes
