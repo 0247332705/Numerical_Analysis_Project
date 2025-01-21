@@ -3,7 +3,7 @@ Resolution of a 2D Poisson problem
 Numerical analysis - University of Luxembourg
 Project 2
 
-Introduction
+## Introduction
 The Poisson equation appears in many physical applications; electrostatics, fluid mechanics, gravitational field, heat conduction, etc. Let us consider the Poisson problem in two space dimensions $x$ and $y$. It takes the form
 
 $$
@@ -20,14 +20,14 @@ and analyze its numerical properties. We propose to discretize the Poisson equat
 
 You should write a small project report that shows your results, and summarize your findings. For the evaluation I will pay attention to the quality of the interpretations, how you apply the algorithms and the quality of the numerical illustrations. It does not need to be long: I will prefer a short summary that shows that you have understood and analyzed the methods.
 
-1 Finite difference discretization
+## 1 Finite difference discretization
 In this part we propose to i) find a discrete version of the Poisson problem, ii) implement and validate the solver.
 1.1 Designing the solver
 
 You may follow the steps below
-1. Generate a rectangular grid of $\left(N_x-1\right) \times\left(N_v-1\right)$ points, which will represent the discretization of the interior domain of $\Omega$. Each point ( $x_i, y_j$ ) of the grid has an index $i \in\left\{1, \cdots, N_z-1\right\}$ and $j \in\left\{1, \cdots, N_y-1\right\}$. You can use the numpy .meshgrid function.
-2. Recall the finite difference formula for the second order derivative in 1D and its approximation order. Apply the formala to the $x$ and $y$ directions.
-3. Combine the two partial derivatives and write an explicit form of the discrete Laplacian in terms of the grid points. Use the notation shorthand $u_{i j}=u\left(x_i, y_j\right)$ for the unknowns. What simplification do you obtain with an uniform grid?
+> 1. Generate a rectangular grid of $\left(N_x-1\right) \times\left(N_v-1\right)$ points, which will represent the discretization of the interior domain of $\Omega$. Each point ( $x_i, y_j$ ) of the grid has an index $i \in\left\{1, \cdots, N_z-1\right\}$ and $j \in\left\{1, \cdots, N_y-1\right\}$. You can use the numpy .meshgrid function.
+> 2. Recall the finite difference formula for the second order derivative in 1D and its approximation order. Apply the formala to the $x$ and $y$ directions.
+> 3. Combine the two partial derivatives and write an explicit form of the discrete Laplacian in terms of the grid points. Use the notation shorthand $u_{i j}=u\left(x_i, y_j\right)$ for the unknowns. What simplification do you obtain with an uniform grid?
 
 4. Write the discrete Laplacian in a matrix form, and express the discrete Poisson equation as a linear system $\mathrm{Au}=\mathbf{f}$ of size $\left(N_x-1\right) \times\left(N_y-1\right)$. To do so you need to order the unknowns to get a global unknown vector. For example, you can use the column ordering $\mathbf{u}=\mathbf{u}_j, j=\left\{1, N_y-1\right\}$, where each $\mathbf{u}_j$ is a vector of size $\left(N_x-1\right)$ such that
 
