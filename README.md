@@ -82,7 +82,7 @@ where $\otimes$ is the Kronecker product, and $T$ a matrix to be identified.
 
 ***
 
-## - 2.2 Iterative methods
+##2.2 Iterative methods
 
 We shall now investigate the performance of some iterative methods. Before doing so you may find theoretically the eigenvalues of the discrete Laplacian in 2D by following these steps
 
