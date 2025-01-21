@@ -27,14 +27,14 @@ In this part we propose to i) find a discrete version of the Poisson problem, ii
 1.1 Designing the solver
 
 You may follow the steps below
-> 1. Generate a rectangular grid of $N_x-1 \times N_v-1$ points, which will represent the discretization of the interior domain of $\Omega$. Each point ( $x_i, y_j$ ) of the grid has an index $i \in\left\{1, \cdots, N_z-1\right\}$ and $j \in\left\{1, \cdots, N_y-1\right\}$. You can use the numpy .meshgrid function.
+> 1. Generate a rectangular grid of $N_x-1 \times N_v-1$ points, which will represent the discretization of the interior domain of $\Omega$. Each point ( $x_i, y_j$ ) of the grid has an index $i \in \{1, \cdots, N_z-1\right\}$ and $j \in \{1, \cdots, N_y-1\right\}$. You can use the numpy .meshgrid function.
 > 2. Recall the finite difference formula for the second order derivative in 1D and its approximation order. Apply the formala to the $x$ and $y$ directions.
-> 3. Combine the two partial derivatives and write an explicit form of the discrete Laplacian in terms of the grid points. Use the notation shorthand $u_{i j}=u\left(x_i, y_j\right)$ for the unknowns. What simplification do you obtain with an uniform grid?
+> 3. Combine the two partial derivatives and write an explicit form of the discrete Laplacian in terms of the grid points. Use the notation shorthand $u_{i j}=u (x_i, y_j\right)$ for the unknowns. What simplification do you obtain with an uniform grid?
 
-4. Write the discrete Laplacian in a matrix form, and express the discrete Poisson equation as a linear system $\mathrm{Au}=\mathbf{f}$ of size $\left(N_x-1\right) \times\left(N_y-1\right)$. To do so you need to order the unknowns to get a global unknown vector. For example, you can use the column ordering $\mathbf{u}=\mathbf{u}_j, j=\left\{1, N_y-1\right\}$, where each $\mathbf{u}_j$ is a vector of size $\left(N_x-1\right)$ such that
+4. Write the discrete Laplacian in a matrix form, and express the discrete Poisson equation as a linear system $\mathrm{Au}=\mathbf{f}$ of size $ (N_x-1\right) \times (N_y-1\right)$. To do so you need to order the unknowns to get a global unknown vector. For example, you can use the column ordering $\mathbf{u}=\mathbf{u}_j, j= \{1, N_y-1\right\}$, where each $\mathbf{u}_j$ is a vector of size $ (N_x-1\right)$ such that
 
 $$
-\mathbf{u}_j=\left(u_{0 j}, u_{1 j}, \cdots, u_{N_x-1, j}\right)^T
+\mathbf{u}_j= (u_{0 j}, u_{1 j}, \cdots, u_{N_x-1, j}\right)^T
 $$
 
 
@@ -51,7 +51,7 @@ $$
 \mathbf{A} \mathbf{u}=\mathbf{b}+\mathbf{f}
 $$
 
-where you will specify the vector $\mathbf{b}$, of size $\left(N_y-1\right)^2$. How would you extend the procedure for a non-zero boundary condition?
+where you will specify the vector $\mathbf{b}$, of size $ (N_y-1\right)^2$. How would you extend the procedure for a non-zero boundary condition?
 1.2 Validation of the implementation
 
 To validate the implementation we need to define an exact solution. To do so let us take
@@ -86,7 +86,7 @@ where $\otimes$ is the Kronecker product, and $T$ a matrix to be identified.
 
 We shall now investigate the performance of some iterative methods. Before doing so you may find theoretically the eigenvalues of the discrete Laplacian in 2D by following these steps
 
-> - If $\mathbb{T}$ is of size $N$, show that its eigenvalues are $\lambda_i=2-2 \cos \left(\frac{\pi i}{N+1}\right)$. (Hint: find a recurrence formula for the eigenvalues and look again at the definition of Chebychev polynomials)
+> - If $\mathbb{T}$ is of size $N$, show that its eigenvalues are $\lambda_i=2-2 \cos  (\frac{\pi i}{N+1}\right)$. (Hint: find a recurrence formula for the eigenvalues and look again at the definition of Chebychev polynomials)
 
 > - Use the Kronecker product form of $\Delta_h$ to deduce the eigenvalues $\lambda_{i, j}$ of the 2D discrete Laplacian (Hint: look up on what does the Kronecker product to eigenvalues)
 We now turn into the implementation of iterative methods.
