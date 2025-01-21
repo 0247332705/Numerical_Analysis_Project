@@ -31,10 +31,10 @@ You may follow the steps below
 > 2. Recall the finite difference formula for the second order derivative in 1D and its approximation order. Apply the formala to the $x$ and $y$ directions.
 > 3. Combine the two partial derivatives and write an explicit form of the discrete Laplacian in terms of the grid points. Use the notation shorthand $u_{i j}=u (x_i, y_j\ )$ for the unknowns. What simplification do you obtain with an uniform grid?
 
-4. Write the discrete Laplacian in a matrix form, and express the discrete Poisson equation as a linear system $\mathrm{Au}=\mathbf{f}$ of size $(N_x-1\ ) \times (N_y-1\ )$. To do so you need to order the unknowns to get a global unknown vector. For example, you can use the column ordering $\mathbf{u}=\mathbf{u}_j, j= \{1, N_y-1\ \}$, where each $\mathbf{u}_j$ is a vector of size $ (N_x-1\ )$ such that
+4. Write the discrete Laplacian in a matrix form, and express the discrete Poisson equation as a linear system $\mathrm{Au}=\mathbf{f}$ of size $(N_x-1\ ) \times (N_y-1\ )$. To do so you need to order the unknowns to get a global unknown vector. For example, you can use the column ordering $\mathbf{u}=\mathbf{u}_j, j= \{1, N_y-1\ \}$, where each $\mathbf{u}_j$ is a vector of size $N_x-1$ such that
 
 $$
-\mathbf{u}_j= (u_{0 j}, u_{1 j}, \cdots, u_{N_x-1, j})^T
+\mathbf{u}_j= (u_{0,j}, u_{1,j},\cdots,u_{N_x-1,j})^T
 $$
 
 
