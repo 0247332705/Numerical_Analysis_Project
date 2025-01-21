@@ -20,6 +20,8 @@ and analyze its numerical properties. We propose to discretize the Poisson equat
 
 You should write a small project report that shows your results, and summarize your findings. For the evaluation I will pay attention to the quality of the interpretations, how you apply the algorithms and the quality of the numerical illustrations. It does not need to be long: I will prefer a short summary that shows that you have understood and analyzed the methods.
 
+***
+
 ## 1 Finite difference discretization
 In this part we propose to i) find a discrete version of the Poisson problem, ii) implement and validate the solver.
 1.1 Designing the solver
@@ -62,6 +64,8 @@ $$
 Find by hand the corresponding right-hand-side $f(x, y)$ for this solution. Is the exact solution consistent with the boundary conditions ?
 Given a number of grid points (start with a small number), call a linear system solver and compute the relative error in the maximum norm in the computational domain $\Omega$. Show a convergence plot in $\log -\log$ scale with respect to the step size. What is the expected convergence rate? Do you observe any difficulty in terms of computational time ?
 
+***
+
 ## 2 Solving the linear system
 In this part we will analyze various ways to solve the linear system. We will compare the numerical cost of some direct and iterative methods.
 2.1 Direct methods
@@ -75,6 +79,8 @@ $$
 
 where $\otimes$ is the Kronecker product, and $T$ a matrix to be identified.
 - Explain why it is advantageous to use a sparse matrix representation. As a justification, you may count the number of operations when doing a Gaussian elimination of a tridiagonal matrix.
+
+***
 
 ## - 2.2 Iterative methods
 
@@ -95,7 +101,9 @@ We now turn into the implementation of iterative methods.
 
 5. Plot the decrease of the residual for different methods (Jacobi, Gauss-Seidel, SOR) and conclude on the computational performance of these iterative methods.
 
-##3 Extensions to the solver
+***
+
+## 3 Extensions to the solver
 
 You can continue the development of your solver by choosing one of the following extensions
 
