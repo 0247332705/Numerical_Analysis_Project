@@ -27,7 +27,7 @@ In this part we propose to i) find a discrete version of the Poisson problem, ii
 1.1 Designing the solver
 
 You may follow the steps below
-> 1. Generate a rectangular grid of $\left(N_x-1\right) \times\left(N_v-1\right)$ points, which will represent the discretization of the interior domain of $\Omega$. Each point ( $x_i, y_j$ ) of the grid has an index $i \in\left\{1, \cdots, N_z-1\right\}$ and $j \in\left\{1, \cdots, N_y-1\right\}$. You can use the numpy .meshgrid function.
+> 1. Generate a rectangular grid of $N_x-1 \times N_v-1$ points, which will represent the discretization of the interior domain of $\Omega$. Each point ( $x_i, y_j$ ) of the grid has an index $i \in\left\{1, \cdots, N_z-1\right\}$ and $j \in\left\{1, \cdots, N_y-1\right\}$. You can use the numpy .meshgrid function.
 > 2. Recall the finite difference formula for the second order derivative in 1D and its approximation order. Apply the formala to the $x$ and $y$ directions.
 > 3. Combine the two partial derivatives and write an explicit form of the discrete Laplacian in terms of the grid points. Use the notation shorthand $u_{i j}=u\left(x_i, y_j\right)$ for the unknowns. What simplification do you obtain with an uniform grid?
 
